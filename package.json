@@ -1,0 +1,12 @@
+{
+  "name": "Bot",
+  "version": "0.1.0",
+  "description": "Discord Bot ",
+  "main": "main.js",
+  "repository": "https://github.com/Weedomeker/bot-discord.git",
+  "author": "Weedomeker <weedomeker@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "discordjs/discord.js"
+  }
+}
