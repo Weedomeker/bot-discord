@@ -1,10 +1,10 @@
 const { Client } = require("discord.js");
-const {TOKEN, PREFIX} = require("./config.js");
+const { TOKEN, PREFIX } = require("./config.js");
 const client = new Client();
 
 
 client.on("ready", () => {
-  console.log("Je suis OnFire !");
+  console.log("Bot Ready...!");
 });
 
 client.on("message", msg => {
