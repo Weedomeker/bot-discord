@@ -23,6 +23,7 @@ client.on('message', message => {
   const args = message.content.slice(PREFIX.length).trim().split(/ +/);
   const command = args.shift().toLowerCase();
   
+
   if (!client.commands.has(command)) return;
   client.commands.get(command).execute(message, args);
  
