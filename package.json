@@ -7,7 +7,7 @@
   "author": "Weedomeker <weedomeker@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "discordjs/discord.js"
+    "discord.js": "github:discordjs/discord.js"
   },
   "devDependencies": {
     "eslint": "^7.1.0",
@@ -16,11 +16,11 @@
   "eslintConfig": {
     "extends": "aqua/node",
     "rules": {
-      "linebreak-style":[
+      "linebreak-style": [
         "error",
         "windows"
       ],
-      "quotes":[
+      "quotes": [
         "warn",
         "double"
       ],
@@ -29,7 +29,6 @@
         2
       ],
       "curly": "off"
-
     }
-}
+  }
 }
