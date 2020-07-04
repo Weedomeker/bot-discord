@@ -1,15 +1,13 @@
-const cron = require ('node-cron');
-const { readdirSync} = require("fs");
 const { Client, Collection } = require('discord.js');
-const { TOKEN, PREFIX } = require('./config.js');
+const { TOKEN, PREFIX} = require('./config.js');
+const { readdirSync} = require("fs");
 
 const client = new Client();
-client.commands = new Collection();
+["commands"].forEach(x => client[x] = new Collection()) ;
 
 const loadCommands = (dir = "./commands/") => {
   readdirSync(dir).forEach(dirs => {
     const commands = readdirSync(`${dir}/${dirs}/`).filter(files => files.endsWith(".js"));
-
     for (const file of commands) {
       const getFileName = require(`${dir}/${dirs}/${file}`);
       client.commands.set(getFileName.help.name, getFileName);
@@ -18,32 +16,22 @@ const loadCommands = (dir = "./commands/") => {
   });
 };
 
+const loadEvents = (dir = "./events/") => {
+  readdirSync(dir).forEach(dirs => {
+    const events = readdirSync(`${dir}/${dirs}/`).filter(files => files.endsWith(".js"));
+
+    for (const event of events) {
+      const evt = require(`${dir}/${dirs}/${event}`);
+      const evtName = event.split(".")[0];
+      client.on(evtName, evt.bind(null, client));
+      console.log(`Evenement chargé: ${evtName}`);
+    };
+  });
+};
+
 loadCommands();
+loadEvents();
 
-client.on('message', message => {
-  if(!message.content.startsWith(PREFIX) || message.author.bot) return;
-  const args = message.content.slice(PREFIX.length).split(/ +/);
-  const commandName = args.shift().toLowerCase();
-  
-  
-  if (!client.commands.has(commandName)) return;
-  const command = client.commands.get(commandName);
-  console.log(`Args: ${args}`);
-
-  if(command.help.args && !args.length) {
-    let noArgsReply = `Argument requis pour cette commande, ${message.author} !`;
-
-    if(command.help.usage) noArgsReply += `\nUsage de la commande: \`${PREFIX}${command.help.name} ${command.help.usage}\``
-
-    return message.channel.send(noArgsReply);
-  }
-
-  command.run(client, message, args, cron);
-  message.delete();
-
-});
-
-client.on('ready', () => {console.log(`Logged in as ${client.user.tag}!`);});
 client.login(TOKEN);
 
 
