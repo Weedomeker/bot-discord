@@ -7,5 +7,5 @@ module.exports.help = {
   name: 'userinfo',
   description: 'Info de l\'utilisateur.',
   args: true,
-  usage: '<@user>'
+  usage: '<@userinfo>'
 };
