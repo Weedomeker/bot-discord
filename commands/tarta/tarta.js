@@ -37,6 +37,7 @@ module.exports.help = {
   name: 'tarta',
   aliases: ['trt', 't'],
   description: 'user et lvl Tarta',
+  permissions: true,
   args: true,
   usage: '<tonMsg>'
 };

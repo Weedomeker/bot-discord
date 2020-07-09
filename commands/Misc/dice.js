@@ -18,6 +18,7 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
   name: 'dice',
   description: 'Lancé de dés !',
+  cooldown: 3,
   args: false
   
 };

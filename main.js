@@ -1,9 +1,9 @@
 const { Client, Collection } = require('discord.js');
-const { TOKEN, PREFIX} = require('./config.js');
+const { TOKEN } = require('./config.js');
 const { readdirSync} = require("fs");
 
 const client = new Client();
-["commands"].forEach(x => client[x] = new Collection()) ;
+["commands", "cooldowns"].forEach(x => client[x] = new Collection()) ;
 
 const loadCommands = (dir = "./commands/") => {
   readdirSync(dir).forEach(dirs => {
@@ -11,7 +11,7 @@ const loadCommands = (dir = "./commands/") => {
     for (const file of commands) {
       const getFileName = require(`${dir}/${dirs}/${file}`);
       client.commands.set(getFileName.help.name, getFileName);
-      console.log(`Commande chargée: ${getFileName.help.name}`);
+      console.log(`► Commande chargée: ${getFileName.help.name}`);
     };
   });
 };
@@ -24,13 +24,17 @@ const loadEvents = (dir = "./events/") => {
       const evt = require(`${dir}/${dirs}/${event}`);
       const evtName = event.split(".")[0];
       client.on(evtName, evt.bind(null, client));
-      console.log(`Evenement chargé: ${evtName}`);
+      console.log(`► Evenement chargé: ${evtName}`);
     };
+    
   });
 };
 
+console.log('══════════════════════════');
 loadCommands();
+console.log('══════════════════════════');
 loadEvents();
+console.log('══════════════════════════');
 
 client.login(TOKEN);
 

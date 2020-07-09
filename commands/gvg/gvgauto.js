@@ -1,18 +1,19 @@
 const cron = require ('node-cron');
 const { MessageEmbed } = require("discord.js");
+module.exports.run = (client, message, args) => {
 
-module.exports.run = (client, message, args, cron) => {
-
-  const startStop = args[0];
-  const dimanche = ('* * 15 * * 0');
-  const jeudi = ('* * 21 * * 4');
-  const test = ('*/5 * * * * 6');
+  let startStop = (args[0]);
+  const dimanche = ('1 * 15 * * 0');
+  const jeudi = ('1 * 21 * * 4');
+  const test = ('5 * * * * 3');
   //secs mins hrs dMonth month dWeek
   //0=Dimanche
-  console.log(startStop);
 
+  message.channel.send(`Annonces GvG de la semaine activé. ${message.author}`);
 
-  const taskDim = cron.schedule(dimanche, () => {
+  // DEF DIMANCHE 
+  const taskDim = cron.schedule(test, () => {
+    if (startStop == 'start') {
     const embed = new MessageEmbed()
     .setTitle("Inscriptions GvG à 21h00!")
     .setColor("#FF0000")
@@ -24,51 +25,47 @@ module.exports.run = (client, message, args, cron) => {
     .setTimestamp()
     .setFooter(message.author.username, message.author.avatarURL());
 
-    client.channels.cache.get('727579420042461235').send(embed).then(async msg => {
-      await msg.react("☝️");
+    client.channels.cache.get('713768108799557752').send(embed).then(async msg => {
+      await msg.react("☝️");});
+      taskDim.stop();
+      console.log('Annonce envoyé, next Dimanche prochain...');
+      taskDim.start();
+      //console.log('Task reboot');
+  } else if (startStop = 'stop') {
+    taskDim.destroy();
+    console.log('Annonce détruite ! Next reboot.');
+  };
+
     });
-  }, {
-    schedule: false
-});
+  
 
-  const taskJeu = cron.schedule(jeudi, () => {
+
+// DEF JEUDI
+const taskJeud = cron.schedule(test, () => {
+  if (startStop == 'start') {
     const embed = new MessageEmbed()
-    .setTitle("Grosses def GvG!")
-    .setColor("#FF0000")
-    .addField(
-      "Pour info:",
-      `Merci de mettre vos grosses def avant demain matin 9h! Ceux qui ne l'ont pas fait ne seront pas inscris!`
-    )
-    .setTimestamp()
-    .setFooter(message.author.username, message.author.avatarURL());
-
-    client.channels.cache.get('727579420042461235').send(embed);
-  }, {
-    schedule: false
-});
-
-  const taskTest = cron.schedule(test, () => {
-    message.channel.send ('Start ok');
-  }, {
-    schedule: true
-});  
-
-  switch(startStop) {
-    case "start":
-      taskTest.start();
-      console.log("Launched");
-      //taskDim.start();
-      //taskJeu.start(); 
-      break;
-    case "stop":
-        taskTest.stop();
-        console.log("stopped");
-      //taskDim.stop();
-      //taskJeu.stop();
-    break;
-
+      .setTitle("Grosses def GvG!")
+      .setColor("#FF0000")
+      .addField(
+        "Pour info:",
+        `Merci de mettre vos grosses def avant demain matin 9h! Ceux qui ne l'ont pas fait ne seront pas inscris!`
+      )
+      .setTimestamp()
+      .setFooter(message.author.username, message.author.avatarURL());
+      client.channels.cache.get('713768108799557752').send(embed);
+      taskJeud.stop();
+      console.log('Annonce envoyé, next Jeudi prochain...');
+      taskJeud.start();
+      //console.log('Reboot annonce...');
+  } else if (startStop = 'stop') {
+    taskJeud.destroy();
+    console.log('Annonce détruite ! Next reboot.');
   };
   
+    });
+  
+
+
 };
 
 
