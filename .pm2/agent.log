@@ -1,0 +1,148 @@
+2020-07-07T08:36:31.031Z interactor:daemon MACHINE_NAME=DiskStation-0225
+2020-07-07T08:36:31.034Z interactor:daemon PUBLIC_KEY=ych1wfb7nvvl96d
+2020-07-07T08:36:31.034Z interactor:daemon WEBSOCKET_ENABLED=true
+2020-07-07T08:36:31.034Z interactor:daemon AXON_ENABLED=false
+2020-07-07T08:36:31.034Z interactor:daemon ROOT_URL=https://root.keymetrics.io
+2020-07-07T08:36:31.035Z interactor:interface New transporter interface
+2020-07-07T08:36:31.035Z interactor:interface Bind [websocket] transport to transporter interface
+2020-07-07T08:36:31.071Z interactor:daemon [PM2 Agent] Launching agent
+2020-07-07T08:36:31.071Z interactor:daemon Launching Interactor RPC server (bind to /volume1/web/discord-bot/Bot/.pm2/interactor.sock)
+2020-07-07T08:36:31.236Z interactor:interface Transporters are not connected, connect them with: {"ws":"wss://diavel.keymetrics.io/interaction/public","push":"https://diavel.keymetrics.io:80","web":"https://diavel.keymetrics.io:443","realtime":"https://diavel.keymetrics.io:443","reverse":"https://diavel.keymetrics.io:43554"}
+2020-07-07T08:36:31.336Z interactor:reverse Reverse interactor is listening
+2020-07-07T08:36:31.336Z interactor:daemon Interactor daemon started
+2020-07-07T08:36:31.350Z interactor:pm2:interface PM2Interface instantiate
+2020-07-07T08:39:31.331Z interactor:daemon PM2 Watchdog started
+2020-07-07T08:39:31.331Z interactor:watchdog Launching
+2020-07-07T08:40:51.078Z interactor:daemon Shutdown request received via RPC
+2020-07-07T08:40:51.078Z interactor:daemon Exiting Interactor
+2020-07-07T08:40:51.079Z interactor:reverse Reverse interactor is no longer listening
+2020-07-07T08:40:51.080Z interactor:interface Disconnect all transporters
+2020-07-07T08:40:51.090Z interactor:transporter Closed transporter
+2020-07-07T08:40:51.090Z interactor:transporter Trying to reconnect to remote endpoint
+2020-07-07T08:40:51.091Z interactor:interface Received event from websocket transporter
+2020-07-07T08:40:51.093Z interactor:daemon RPC server closed
+2020-07-07T08:41:25.003Z interactor:daemon MACHINE_NAME=DiskStation-0225
+2020-07-07T08:41:25.006Z interactor:daemon PUBLIC_KEY=ych1wfb7nvvl96d
+2020-07-07T08:41:25.006Z interactor:daemon WEBSOCKET_ENABLED=true
+2020-07-07T08:41:25.006Z interactor:daemon AXON_ENABLED=false
+2020-07-07T08:41:25.006Z interactor:daemon ROOT_URL=https://root.keymetrics.io
+2020-07-07T08:41:25.007Z interactor:interface New transporter interface
+2020-07-07T08:41:25.007Z interactor:interface Bind [websocket] transport to transporter interface
+2020-07-07T08:41:25.039Z interactor:daemon [PM2 Agent] Launching agent
+2020-07-07T08:41:25.040Z interactor:daemon Launching Interactor RPC server (bind to /volume1/web/discord-bot/Bot/.pm2/interactor.sock)
+2020-07-07T08:41:25.192Z interactor:interface Transporters are not connected, connect them with: {"ws":"wss://diavel.keymetrics.io/interaction/public","push":"https://diavel.keymetrics.io:80","web":"https://diavel.keymetrics.io:443","realtime":"https://diavel.keymetrics.io:443","reverse":"https://diavel.keymetrics.io:43554"}
+2020-07-07T08:41:25.298Z interactor:reverse Reverse interactor is listening
+2020-07-07T08:41:25.298Z interactor:daemon Interactor daemon started
+2020-07-07T08:41:25.315Z interactor:pm2:interface PM2Interface instantiate
+2020-07-07T08:42:18.288Z interactor:interface Received event from websocket transporter
+2020-07-07T08:42:18.289Z interactor:reverse New PM2 action triggered : pm2 startLogging {"name":"Orphea"}
+2020-07-07T08:42:18.289Z interactor:reverse PM2 action ended : pm2 startLogging (no error)
+2020-07-07T08:42:23.042Z interactor:interface Received event from websocket transporter
+2020-07-07T08:42:23.042Z interactor:reverse New PM2 action triggered : pm2 stopLogging {"name":"Orphea"}
+2020-07-07T08:42:23.043Z interactor:reverse PM2 action ended : pm2 stopLogging (no error)
+2020-07-07T08:42:24.276Z interactor:interface Received event from websocket transporter
+2020-07-07T08:42:24.277Z interactor:reverse New PM2 action triggered : pm2 startLogging {"name":"pm2-discord"}
+2020-07-07T08:42:24.277Z interactor:reverse PM2 action ended : pm2 startLogging (no error)
+2020-07-07T08:42:27.603Z interactor:interface Received event from websocket transporter
+2020-07-07T08:42:27.603Z interactor:reverse New PM2 action triggered : pm2 stopLogging {"name":"pm2-discord"}
+2020-07-07T08:42:27.603Z interactor:reverse PM2 action ended : pm2 stopLogging (no error)
+2020-07-07T08:44:25.288Z interactor:daemon PM2 Watchdog started
+2020-07-07T08:44:25.289Z interactor:watchdog Launching
+2020-07-07T11:16:08.051Z interactor:daemon Shutdown request received via RPC
+2020-07-07T11:16:08.051Z interactor:daemon Exiting Interactor
+2020-07-07T11:16:08.051Z interactor:reverse Reverse interactor is no longer listening
+2020-07-07T11:16:08.053Z interactor:interface Disconnect all transporters
+2020-07-07T11:16:08.064Z interactor:transporter Closed transporter
+2020-07-07T11:16:08.064Z interactor:transporter Trying to reconnect to remote endpoint
+2020-07-07T11:16:08.064Z interactor:interface Received event from websocket transporter
+2020-07-07T11:16:08.065Z interactor:daemon RPC server closed
+2020-07-07T11:16:27.078Z interactor:daemon MACHINE_NAME=DiskStation-0225
+2020-07-07T11:16:27.081Z interactor:daemon PUBLIC_KEY=ych1wfb7nvvl96d
+2020-07-07T11:16:27.082Z interactor:daemon WEBSOCKET_ENABLED=true
+2020-07-07T11:16:27.082Z interactor:daemon AXON_ENABLED=false
+2020-07-07T11:16:27.082Z interactor:daemon ROOT_URL=https://root.keymetrics.io
+2020-07-07T11:16:27.082Z interactor:interface New transporter interface
+2020-07-07T11:16:27.083Z interactor:interface Bind [websocket] transport to transporter interface
+2020-07-07T11:16:27.120Z interactor:daemon [PM2 Agent] Launching agent
+2020-07-07T11:16:27.120Z interactor:daemon Launching Interactor RPC server (bind to /volume1/web/discord-bot/Bot/.pm2/interactor.sock)
+2020-07-07T11:16:27.275Z interactor:interface Transporters are not connected, connect them with: {"ws":"wss://diavel.keymetrics.io/interaction/public","push":"https://diavel.keymetrics.io:80","web":"https://diavel.keymetrics.io:443","realtime":"https://diavel.keymetrics.io:443","reverse":"https://diavel.keymetrics.io:43554"}
+2020-07-07T11:16:27.402Z interactor:reverse Reverse interactor is listening
+2020-07-07T11:16:27.403Z interactor:daemon Interactor daemon started
+2020-07-07T11:16:27.419Z interactor:pm2:interface PM2Interface instantiate
+2020-07-07T11:19:27.391Z interactor:daemon PM2 Watchdog started
+2020-07-07T11:19:27.392Z interactor:watchdog Launching
+2020-07-07T11:20:23.232Z interactor:daemon Shutdown request received via RPC
+2020-07-07T11:20:23.233Z interactor:daemon Exiting Interactor
+2020-07-07T11:20:23.233Z interactor:reverse Reverse interactor is no longer listening
+2020-07-07T11:20:23.235Z interactor:interface Disconnect all transporters
+2020-07-07T11:20:23.246Z interactor:transporter Closed transporter
+2020-07-07T11:20:23.246Z interactor:transporter Trying to reconnect to remote endpoint
+2020-07-07T11:20:23.247Z interactor:interface Received event from websocket transporter
+2020-07-07T11:20:23.248Z interactor:daemon RPC server closed
+2020-07-07T11:20:29.574Z interactor:daemon MACHINE_NAME=DiskStation-0225
+2020-07-07T11:20:29.577Z interactor:daemon PUBLIC_KEY=ych1wfb7nvvl96d
+2020-07-07T11:20:29.578Z interactor:daemon WEBSOCKET_ENABLED=true
+2020-07-07T11:20:29.578Z interactor:daemon AXON_ENABLED=false
+2020-07-07T11:20:29.578Z interactor:daemon ROOT_URL=https://root.keymetrics.io
+2020-07-07T11:20:29.578Z interactor:interface New transporter interface
+2020-07-07T11:20:29.579Z interactor:interface Bind [websocket] transport to transporter interface
+2020-07-07T11:20:29.614Z interactor:daemon [PM2 Agent] Launching agent
+2020-07-07T11:20:29.614Z interactor:daemon Launching Interactor RPC server (bind to /volume1/web/discord-bot/Bot/.pm2/interactor.sock)
+2020-07-07T11:20:29.753Z interactor:interface Transporters are not connected, connect them with: {"ws":"wss://diavel.keymetrics.io/interaction/public","push":"https://diavel.keymetrics.io:80","web":"https://diavel.keymetrics.io:443","realtime":"https://diavel.keymetrics.io:443","reverse":"https://diavel.keymetrics.io:43554"}
+2020-07-07T11:20:29.858Z interactor:reverse Reverse interactor is listening
+2020-07-07T11:20:29.858Z interactor:daemon Interactor daemon started
+2020-07-07T11:20:29.874Z interactor:pm2:interface PM2Interface instantiate
+2020-07-07T11:23:29.847Z interactor:daemon PM2 Watchdog started
+2020-07-07T11:23:29.847Z interactor:watchdog Launching
+2020-07-07T11:25:32.142Z interactor:daemon Shutdown request received via RPC
+2020-07-07T11:25:32.143Z interactor:daemon Exiting Interactor
+2020-07-07T11:25:32.144Z interactor:reverse Reverse interactor is no longer listening
+2020-07-07T11:25:32.148Z interactor:interface Disconnect all transporters
+2020-07-07T11:25:32.160Z interactor:transporter Closed transporter
+2020-07-07T11:25:32.161Z interactor:transporter Trying to reconnect to remote endpoint
+2020-07-07T11:25:32.161Z interactor:interface Received event from websocket transporter
+2020-07-07T11:25:32.163Z interactor:daemon RPC server closed
+2020-07-07T11:25:37.884Z interactor:daemon MACHINE_NAME=DiskStation-0225
+2020-07-07T11:25:37.888Z interactor:daemon PUBLIC_KEY=ych1wfb7nvvl96d
+2020-07-07T11:25:37.889Z interactor:daemon WEBSOCKET_ENABLED=true
+2020-07-07T11:25:37.890Z interactor:daemon AXON_ENABLED=false
+2020-07-07T11:25:37.891Z interactor:daemon ROOT_URL=https://root.keymetrics.io
+2020-07-07T11:25:37.892Z interactor:interface New transporter interface
+2020-07-07T11:25:37.894Z interactor:interface Bind [websocket] transport to transporter interface
+2020-07-07T11:25:37.935Z interactor:daemon [PM2 Agent] Launching agent
+2020-07-07T11:25:37.937Z interactor:daemon Launching Interactor RPC server (bind to /volume1/web/discord-bot/Bot/.pm2/interactor.sock)
+2020-07-07T11:25:38.094Z interactor:interface Transporters are not connected, connect them with: {"ws":"wss://diavel.keymetrics.io/interaction/public","push":"https://diavel.keymetrics.io:80","web":"https://diavel.keymetrics.io:443","realtime":"https://diavel.keymetrics.io:443","reverse":"https://diavel.keymetrics.io:43554"}
+2020-07-07T11:25:38.207Z interactor:reverse Reverse interactor is listening
+2020-07-07T11:25:38.208Z interactor:daemon Interactor daemon started
+2020-07-07T11:25:38.230Z interactor:pm2:interface PM2Interface instantiate
+2020-07-07T11:28:38.197Z interactor:daemon PM2 Watchdog started
+2020-07-07T11:28:38.197Z interactor:watchdog Launching
+2020-07-09T20:13:54.270Z interactor:daemon Shutdown request received via RPC
+2020-07-09T20:13:54.271Z interactor:daemon Exiting Interactor
+2020-07-09T20:13:54.272Z interactor:reverse Reverse interactor is no longer listening
+2020-07-09T20:13:54.274Z interactor:interface Disconnect all transporters
+2020-07-09T20:13:54.299Z interactor:transporter Closed transporter
+2020-07-09T20:13:54.300Z interactor:transporter Trying to reconnect to remote endpoint
+2020-07-09T20:13:54.300Z interactor:interface Received event from websocket transporter
+2020-07-09T20:13:54.307Z interactor:daemon RPC server closed
+2020-07-09T20:14:02.338Z interactor:daemon MACHINE_NAME=DiskStation-0225
+2020-07-09T20:14:02.341Z interactor:daemon PUBLIC_KEY=ych1wfb7nvvl96d
+2020-07-09T20:14:02.341Z interactor:daemon WEBSOCKET_ENABLED=true
+2020-07-09T20:14:02.341Z interactor:daemon AXON_ENABLED=false
+2020-07-09T20:14:02.341Z interactor:daemon ROOT_URL=https://root.keymetrics.io
+2020-07-09T20:14:02.341Z interactor:interface New transporter interface
+2020-07-09T20:14:02.342Z interactor:interface Bind [websocket] transport to transporter interface
+2020-07-09T20:14:02.377Z interactor:daemon [PM2 Agent] Launching agent
+2020-07-09T20:14:02.378Z interactor:daemon Launching Interactor RPC server (bind to /volume1/web/discord-bot/Bot/.pm2/interactor.sock)
+2020-07-09T20:14:02.516Z interactor:interface Transporters are not connected, connect them with: {"ws":"wss://diavel.keymetrics.io/interaction/public","push":"https://diavel.keymetrics.io:80","web":"https://diavel.keymetrics.io:443","realtime":"https://diavel.keymetrics.io:443","reverse":"https://diavel.keymetrics.io:43554"}
+2020-07-09T20:14:02.633Z interactor:reverse Reverse interactor is listening
+2020-07-09T20:14:02.634Z interactor:daemon Interactor daemon started
+2020-07-09T20:14:02.651Z interactor:pm2:interface PM2Interface instantiate
+2020-07-09T20:14:05.908Z interactor:daemon Shutdown request received via RPC
+2020-07-09T20:14:05.909Z interactor:daemon Exiting Interactor
+2020-07-09T20:14:05.909Z interactor:reverse Reverse interactor is no longer listening
+2020-07-09T20:14:05.911Z interactor:interface Disconnect all transporters
+2020-07-09T20:14:05.924Z interactor:transporter Closed transporter
+2020-07-09T20:14:05.925Z interactor:transporter Trying to reconnect to remote endpoint
+2020-07-09T20:14:05.926Z interactor:interface Received event from websocket transporter
+2020-07-09T20:14:05.927Z interactor:daemon RPC server closed

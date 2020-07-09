@@ -34,5 +34,6 @@
       ],
       "curly": "off"
     }
-  }
+  },
+  "optionalDependencies": {}
 }

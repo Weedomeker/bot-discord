@@ -1,0 +1,13 @@
+{
+    "version_management": {
+        "active": true
+    },
+    "public_key": "ych1wfb7nvvl96d",
+    "secret_key": "5kma82p2bqdduxl",
+    "machine_name": "DiskStation-0225",
+    "pm2_version": "4.4.0",
+    "reverse_interact": true,
+    "info_node": "https://root.keymetrics.io",
+    "agent_transport_websocket": "true",
+    "agent_transport_axon": "false"
+}
