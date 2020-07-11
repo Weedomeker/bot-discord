@@ -1,13 +1,12 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = (client, message, args) => {
-
-  const nEmo = message.guild.emojis.cache.get('728731272888975430');
-  const hEmo = message.guild.emojis.cache.get('728729060087300157');
-  const aEmo = message.guild.emojis.cache.get('728729060435296296');
-  const hllEmo = message.guild.emojis.cache.get('728729060628496494');
-  const txt = (args);
-  const txtMsg = (txt.join(' '));
+  const nEmo = message.guild.emojis.cache.get("728731272888975430");
+  const hEmo = message.guild.emojis.cache.get("728729060087300157");
+  const aEmo = message.guild.emojis.cache.get("728729060435296296");
+  const hllEmo = message.guild.emojis.cache.get("728729060628496494");
+  const txt = args;
+  const txtMsg = txt.join(" ");
 
   const embed = new MessageEmbed()
     .setTitle(`${txtMsg}`)
@@ -18,26 +17,25 @@ module.exports.run = (client, message, args) => {
       *${nEmo} = Normal ${hEmo} = Hard
       ${aEmo} = Hard Explosion/VIT limitée ${hllEmo} = Hell\n
       Cliquez sur les réacts en fonction de votre niveau d'attaque. Merci !*
-      `)
+      `
+    )
     .setTimestamp()
     .setFooter(message.author.username, message.author.avatarURL());
 
-    client.channels.cache.get('727579420042461235').send(embed).then(async msg => {
-      await msg.react(nEmo);
-      await msg.react(hEmo);
-      await msg.react(aEmo);
-      await msg.react(hllEmo);
-      
-    });
-
-    
+  client.channels.cache.get("727579420042461235").send(embed).then(async msg => {
+    await msg.react(nEmo);
+    await msg.react(hEmo);
+    await msg.react(aEmo);
+    await msg.react(hllEmo);
+  });
 };
 
 module.exports.help = {
-  name: 'tarta',
-  aliases: ['trt', 't'],
-  description: 'user et lvl Tarta',
+  name: "tarta",
+  aliases: ["trt", "t"],
+  description: "user et lvl Tarta",
+  isAdmin: false,
   permissions: true,
   args: true,
-  usage: '<tonMsg>'
+  usage: "<tonMsg>"
 };

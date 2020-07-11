@@ -1,1 +1,0 @@
-#Bot Discord for guild gestion SW.

@@ -1,7 +1,8 @@
 node_modules/
 config.js
-.config
-.npm
-.pm2
-.ssh
-.vscode
+.config/
+.npm/
+.pm2/
+.ssh/
+.vscode/
+memo
