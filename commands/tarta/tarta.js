@@ -33,6 +33,7 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
   name: "tarta",
   aliases: ["trt", "t"],
+  category: "tarta",
   description: "user et lvl Tarta",
   isAdmin: false,
   permissions: true,

@@ -25,6 +25,7 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
   name: "clear",
   aliases: ["clear", "cls", "del"],
+  category: "moderation",
   description: "Suppression des messages",
   permissions: true,
   isAdmin: false,

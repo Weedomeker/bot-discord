@@ -1,6 +1,5 @@
-const msgId = require("./messageReactionAdd.js");
-module.exports = (client, messageReaction, user) => {
-  console.log(`Dans le remove: ${msgId.msgId1}`);
+module.exports = (client, messageReaction, user, msgId1) => {
+  console.log(`Dans le remove: ${msgId1}`);
   const { message } = messageReaction;
   const member = message.guild.members.cache.get(user.id);
   const emoji = messageReaction.emoji.name;
@@ -13,7 +12,7 @@ module.exports = (client, messageReaction, user) => {
     switch (emoji) {
     case "Normal":
       message.channel.send(`${member}: attaque annulée !`);
-      console.log(`Dans le remove: ${msgId.msgId1}`);
+      console.log(`Dans le remove: ${msgId1}`);
       client.channels.cache.get("727596239465611296").send(`${member.displayName}: attaque annulée !`);
       break;
     case "HardSAUVE":

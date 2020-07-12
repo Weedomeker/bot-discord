@@ -8,6 +8,7 @@ module.exports = (client, messageReaction, user) => {
   const aEmo = message.guild.emojis.cache.get("728729060435296296");
   const hllEmo = message.guild.emojis.cache.get("728729060628496494");
 
+
   if (member.user.bot) return;
 
   if (["Normal", "HardSAUVE", "hardEXPLOVIT", "Hell"].includes(emoji) && message.channel.id === channel.id) {
@@ -17,9 +18,8 @@ module.exports = (client, messageReaction, user) => {
         await msg.react("✅");
         const msgId1 = message.channel.lastMessageID;
         await console.log(`MessageChannel ID: ${msgId1}`);
-        exports.msgId1 = msgId1;
+        module.exports = msgId1;
       });
-
       client.channels.cache.get("727596239465611296").send(`${member.displayName}: attaque en cours... ${nEmo}`);
       break;
     case "HardSAUVE":
@@ -52,4 +52,3 @@ module.exports = (client, messageReaction, user) => {
     }
   }
 };
-

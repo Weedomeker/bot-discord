@@ -7,7 +7,7 @@ module.exports = async client => {
     .setTitle("Etat du bot:")
     .setColor("#00e51b")
     .setThumbnail(client.user.displayAvatarURL())
-    .addField("Bot opérationnel !", "Youhouuu 😺")
+    .addField("Bot opérationnel !", "Youhouuu 😺\n\n **Penses à relancer les annonces auto si besoin...**")
   // .setImage(client.user.displayAvatarURL())
     .setTimestamp();
   await client.channels.cache.get("727596239465611296").send(embed);

@@ -25,6 +25,7 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
   name: "embed",
   aliases: ["an", "ann"],
+  category: "moderation",
   description: "Envoie un embed !",
   isAdmin: false,
   permissions: true,

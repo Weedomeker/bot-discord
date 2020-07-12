@@ -17,6 +17,8 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
   name: "dice",
   description: "Lancé de dés !",
+  aliases: "d",
+  category: "misc",
   isAdmin: false,
   permissions: false,
   cooldown: 3,
