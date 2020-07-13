@@ -1,5 +1,6 @@
-module.exports = (client, messageReaction, user, msgId1) => {
-  console.log(`Dans le remove: ${msgId1}`);
+const { CHANNELS } = require("../../util/constants");
+
+module.exports = (client, messageReaction, user) => {
   const { message } = messageReaction;
   const member = message.guild.members.cache.get(user.id);
   const emoji = messageReaction.emoji.name;
@@ -12,20 +13,19 @@ module.exports = (client, messageReaction, user, msgId1) => {
     switch (emoji) {
     case "Normal":
       message.channel.send(`${member}: attaque annulée !`);
-      console.log(`Dans le remove: ${msgId1}`);
-      client.channels.cache.get("727596239465611296").send(`${member.displayName}: attaque annulée !`);
+      client.channels.cache.get(CHANNELS.TARTA.id).send(`${member.displayName}: attaque annulée !`);
       break;
     case "HardSAUVE":
       message.channel.send(`${member}: attaque annulée !`);
-      client.channels.cache.get("727596239465611296").send(`${member.displayName}: attaque annulée !`);
+      client.channels.cache.get(CHANNELS.TARTA.id).send(`${member.displayName}: attaque annulée !`);
       break;
     case "hardEXPLOVIT":
       message.channel.send(`${member}: attaque annulée !`);
-      client.channels.cache.get("727596239465611296").send(`${member.displayName}: attaque annulée !`);
+      client.channels.cache.get(CHANNELS.TARTA.id).send(`${member.displayName}: attaque annulée !`);
       break;
     case "Hell":
       message.channel.send(`${member}: attaque annulée !`);
-      client.channels.cache.get("727596239465611296").send(`${member.displayName}: attaque annulée !`);
+      client.channels.cache.get(CHANNELS.TARTA.id).send(`${member.displayName}: attaque annulée !`);
       break;
     }
   }

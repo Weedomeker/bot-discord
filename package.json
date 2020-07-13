@@ -14,11 +14,13 @@
     "webhook-discord": "^3.7.4"
   },
   "devDependencies": {
+    "electron": "^9.1.0",
     "eslint": "^7.4.0",
     "eslint-config-aqua": "^7.2.4",
     "mocha": "^8.0.1",
     "node-cron": "^2.0.3",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "spectron": "^11.1.0"
   },
   "eslintConfig": {
     "extends": "aqua/node",
@@ -37,6 +39,9 @@
       ],
       "curly": "off"
     }
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "optionalDependencies": {}
 }

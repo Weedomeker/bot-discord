@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { MESSAGES, CHANNELS } = require("../../util/constants");
 
 module.exports.run = (client, message, args) => {
   const nEmo = message.guild.emojis.cache.get("728731272888975430");
@@ -22,7 +23,7 @@ module.exports.run = (client, message, args) => {
     .setTimestamp()
     .setFooter(message.author.username, message.author.avatarURL());
 
-  client.channels.cache.get("727579420042461235").send(embed).then(async msg => {
+  client.channels.cache.get(CHANNELS.TARTA.id).send(embed).then(async msg => {
     await msg.react(nEmo);
     await msg.react(hEmo);
     await msg.react(aEmo);
@@ -30,13 +31,4 @@ module.exports.run = (client, message, args) => {
   });
 };
 
-module.exports.help = {
-  name: "tarta",
-  aliases: ["trt", "t"],
-  category: "tarta",
-  description: "user et lvl Tarta",
-  isAdmin: false,
-  permissions: true,
-  args: true,
-  usage: "<tonMsg>"
-};
+module.exports.help = MESSAGES.COMMANDS.TARTA.TARTA;

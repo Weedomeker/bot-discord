@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { MESSAGES, CHANNELS } = require("../../util/constants");
 
 module.exports.run = async (client, message) => {
   await message.delete();
@@ -11,18 +12,9 @@ module.exports.run = async (client, message) => {
     .addField("Le Bot redémarre.. !", "Ooooh noooon.... 😿")
   // .setImage(client.user.displayAvatarURL())
     .setTimestamp();
-  await client.channels.cache.get("727596239465611296").send(embed);
+  await client.channels.cache.get(CHANNELS.LOG.id).send(embed);
 
   process.exit();
 };
 
-module.exports.help = {
-  name: "reload",
-  description: "Reboot le bot.",
-  aliases: ["reboot", "restart"],
-  category: "moderation",
-  permissions: true,
-  isAdmin: false,
-  args: false,
-  usage: ""
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.RELOAD;

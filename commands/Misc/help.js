@@ -1,8 +1,8 @@
-/* eslint-disable no-else-return */
-/* eslint-disable no-negated-condition */
+
 const { MessageEmbed } = require("discord.js");
 const { PREFIX } = require("../../config");
 const { readdirSync } = require("fs");
+const { MESSAGES } = require("../../util/constants");
 const categoryList = readdirSync("./commands");
 
 module.exports.run = (client, message, args) => {
@@ -19,28 +19,18 @@ module.exports.run = (client, message, args) => {
     }
 
     return message.channel.send(embed);
-  } else {
-    const command = client.commands.get(args[0]) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(args[0]));
-    const embed = new MessageEmbed()
-      .setColor("#36393F")
-      .setTitle(`\`${command.help.name}\``)
-      .addField("Description", `${command.help.description} (cd: ${command.help.cooldown} secs.)`)
-      .addField("Utilisation", command.help.usage ? `${PREFIX}${command.help.name} ${command.help.usage}` : `${PREFIX}${command.help.name}`, true);
-
-    if (command.help.aliases.length > 1) embed.addField("Alias", `${command.help.aliases.join(", ")}`, true);
-    return message.channel.send(embed);
   }
+  const command = client.commands.get(args[0]) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(args[0]));
+  if (!command) return message.reply("Cette commande n'existe pas !");
+
+  const embed = new MessageEmbed()
+    .setColor("#36393F")
+    .setTitle(`\`${command.help.name}\``)
+    .addField("Description", `${command.help.description} (cd: ${command.help.cooldown} secs.)`)
+    .addField("Utilisation", command.help.usage ? `${PREFIX}${command.help.name} ${command.help.usage}` : `${PREFIX}${command.help.name}`, true);
+
+  if (command.help.aliases.length > 1) embed.addField("Alias", `${command.help.aliases.join(", ")}`, true);
+  return message.channel.send(embed);
 };
 
-module.exports.help = {
-  name: "help",
-  description: "Liste des commandes disponibles.",
-  aliases: ["h"],
-  category: "misc",
-  isAdmin: false,
-  permissions: false,
-  cooldown: 3,
-  usage: "<command_name>",
-  args: false
-
-};
+module.exports.help = MESSAGES.COMMANDS.MISC.HELP;

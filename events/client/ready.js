@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { CHANNELS } = require("../../util/constants");
 
 module.exports = async client => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -10,7 +11,7 @@ module.exports = async client => {
     .addField("Bot opérationnel !", "Youhouuu 😺\n\n **Penses à relancer les annonces auto si besoin...**")
   // .setImage(client.user.displayAvatarURL())
     .setTimestamp();
-  await client.channels.cache.get("727596239465611296").send(embed);
+  await client.channels.cache.get(CHANNELS.LOG.id).send(embed);
 };
 
 

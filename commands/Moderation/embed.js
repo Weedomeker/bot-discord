@@ -1,5 +1,6 @@
 // @ts-check
 const { MessageEmbed } = require("discord.js");
+const { MESSAGES } = require("../../util/constants");
 
 module.exports.run = (client, message, args) => {
   const colorUsr = args[0];
@@ -22,13 +23,4 @@ module.exports.run = (client, message, args) => {
   message.channel.send(embed);
 };
 
-module.exports.help = {
-  name: "embed",
-  aliases: ["an", "ann"],
-  category: "moderation",
-  description: "Envoie un embed !",
-  isAdmin: false,
-  permissions: true,
-  args: true,
-  usage: "<color r,g,b,y,o> <texte>"
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.EMBED;

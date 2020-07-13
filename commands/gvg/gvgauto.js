@@ -1,5 +1,6 @@
 const cron = require("node-cron");
 const { MessageEmbed } = require("discord.js");
+const { MESSAGES, CHANNELS } = require("../../util/constants");
 
 module.exports.run = (client, message, args) => {
   // const test = "*/5 * * * * 0";
@@ -20,7 +21,7 @@ module.exports.run = (client, message, args) => {
       )
       .setTimestamp()
       .setFooter(message.author.username, message.author.avatarURL());
-    client.channels.cache.get("713768108799557752").send(embed);
+    client.channels.cache.get(CHANNELS.GVG.id).send(embed);
     taskJeud.stop();
   }, {
     scheduled: false
@@ -54,13 +55,4 @@ module.exports.run = (client, message, args) => {
 };
 
 
-module.exports.help = {
-  name: "gvgauto",
-  aliases: "gvg",
-  category: "gvg",
-  description: "Annonce automatique des défenses gvg (grosses defs / trolls defs)",
-  isAdmin: false,
-  permissions: true,
-  args: true,
-  usage: "Exemple: @gvg start | @gvg stop"
-};
+module.exports.help = MESSAGES.COMMANDS.GVG.GVGAUTO;

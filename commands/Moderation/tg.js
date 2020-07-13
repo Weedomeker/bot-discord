@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { MESSAGES, CHANNELS } = require("../../util/constants");
 
 module.exports.run = async (client, message, args) => {
   const user = message.guild.member(message.mentions.users.first());
@@ -26,17 +27,7 @@ module.exports.run = async (client, message, args) => {
     .setDescription(`**Action:** Suppression messages membre.\n${args[1]} messages supprimés.\n**Channel:**${message.channel}`)
     .setTimestamp();
 
-  client.channels.cache.get("727596239465611296").send(embed);
+  client.channels.cache.get(CHANNELS.LOG.id).send(embed);
 };
 
-module.exports.help = {
-  name: "tg",
-  aliases: ["tg"],
-  category: "moderation",
-  description: "Suppression des x derniers messages du membre.",
-  permissions: true,
-  isAdmin: true,
-  cooldown: 3,
-  args: true,
-  usage: "<user> <nbr (1-100)>"
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.TG;

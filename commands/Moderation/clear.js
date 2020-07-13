@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { MESSAGES, CHANNELS } = require("../../util/constants");
 
 module.exports.run = async (client, message, args) => {
   const limit = args[0];
@@ -19,17 +20,7 @@ module.exports.run = async (client, message, args) => {
     .setDescription(`**Action:** Suppression msgs.\n${limit} messages supprimés.\n**Channel:**${message.channel}`)
     .setTimestamp();
 
-  client.channels.cache.get("727596239465611296").send(embed);
+  client.channels.cache.get(CHANNELS.LOG.id).send(embed);
 };
 
-module.exports.help = {
-  name: "clear",
-  aliases: ["clear", "cls", "del"],
-  category: "moderation",
-  description: "Suppression des messages",
-  permissions: true,
-  isAdmin: false,
-  cooldown: 3,
-  args: true,
-  usage: "<nbr (1-100)>"
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.CLEAR;
