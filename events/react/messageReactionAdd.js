@@ -25,20 +25,21 @@ module.exports = (client, messageReaction, user) => {
       message.channel.send(`${member}: attaque en cours... ${hEmo}`).then(async msg => {
         await msg.react("✅");
       });
-      client.channels.cache.get(CHANNELS.LOG.id).send(`${member}: attaque en cours... ${hEmo}`);
+      client.channels.cache.get(CHANNELS.LOG.id).send(`${member.displayName}: attaque en cours... ${hEmo}`);
       break;
     case "hardEXPLOVIT":
       message.channel.send(`${member}: attaque en cours... ${aEmo}`).then(async msg => {
         await msg.react("✅");
       });
-      client.channels.cache.get(CHANNELS.LOG.id).send(`${member}: attaque en cours... ${aEmo}`);
+      client.channels.cache.get(CHANNELS.LOG.id).send(`${member.displayName}: attaque en cours... ${aEmo}`);
       break;
     case "Hell":
-      message.channel.send(`${member}: attaque en cours... ${hEmo}`).then(async msg => {
+      message.channel.send(`${member}: attaque en cours... ${hllEmo}`).then(async msg => {
         await msg.react("✅");
       });
-      client.channels.cache.get(CHANNELS.LOG.id).send(`${member}: attaque en cours... ${hllEmo}`);
+      client.channels.cache.get(CHANNELS.LOG.id).send(`${member.displayName}: attaque en cours... ${hllEmo}`);
       break;
     }
   }
+  if (emoji === "✅") message.edit(`~~${message.content}~~`);
 };
