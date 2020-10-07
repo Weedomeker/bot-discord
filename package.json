@@ -23,7 +23,7 @@
     "mocha": "^8.0.1",
     "node-cron": "^2.0.3",
     "prettier": "^2.0.5",
-    "spectron": "^11.1.0"
+    "spectron": "^12.0.0"
   },
   "eslintConfig": {
     "extends": "aqua/node",
