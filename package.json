@@ -10,15 +10,6 @@
     "discord.js": "github:discordjs/discord.js",
     "emoji-unicode": "^2.0.1",
     "forever-monitor": "^3.0.1",
-<<<<<<< HEAD
-    "git": "^0.1.5",
-    "modclean": "^3.0.0-beta.1",
-    "mongoose": "^5.10.8",
-    "node-cron": "^2.0.3",
-    "node-http-ping": "^0.3.1",
-    "pm2-discord": "^0.1.2",
-    "webhook-discord": "^3.7.7"
-=======
     "mongoose": "^5.10.8",
     "node-http-ping": "^0.3.1",
     "pm2-discord": "^0.1.2",
@@ -54,7 +45,6 @@
   },
   "scripts": {
     "test": "mocha"
->>>>>>> e0846d668faa4064dac563da34fc7a19a133f2f1
   },
   "optionalDependencies": {}
 }
