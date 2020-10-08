@@ -24,7 +24,65 @@ const MESSAGES = {
         args: true
       }
     },
+    COLLECTORS: {
+      MSGCOLLECTOR: {
+        name: "msgcollector",
+        description: "Collecte les messages.",
+        aliases: ["mcol"],
+        category: "collectors",
+        isAdmin: false,
+        permissions: true,
+        cooldown: 3,
+        usage: "<terme_collect>",
+        args: true
+      }
+    },
+    EXPERIENCE: {
+      REMOVEEXPERIENCE: {
+        name: "removeexperience",
+        description: "Enlève de l'xp à l'utilisateur.",
+        aliases: ["rmxp","removeexperience"],
+        category: "experience",
+        isAdmin: false,
+        permissions: true,
+        cooldown: 3,
+        usage: "<@user> <xp>",
+        args: true
+      },
+      ADDEXPERIENCE: {
+        name: "addexperience",
+        description: "Ajout xp à l'utilisateur.",
+        aliases: ["addxp","addexperience"],
+        category: "experience",
+        isAdmin: false,
+        permissions: true,
+        cooldown: 3,
+        usage: "<@user> <xp>",
+        args: true
+      },
+      USEREXPERIENCE: {
+        name: "userexperience",
+        description: "Exp de l'utilisateur.",
+        aliases: ["usrxp","userexperience"],
+        category: "experience",
+        isAdmin: false,
+        permissions: false,
+        cooldown: 10,
+        usage: "",
+        args: false
+      }
+    },
     MISC: {
+      SLIP: {
+        name: "slip",
+        description: "ça dérape !",
+        aliases: "slip",
+        category: "misc",
+        isAdmin: false,
+        permissions: false,
+        cooldown: 3,
+        args: false
+      },
       PING: {
         name: "ping",
         description: "Temps de réponse serveur / client.",
@@ -76,8 +134,7 @@ const MESSAGES = {
         description: "Annonce automatique des défenses gvg (grosses defs / trolls defs)",
         isAdmin: false,
         permissions: true,
-        args: true,
-        usage: "Exemple: @gvg start | @gvg stop"
+        args: false
       }
     },
     MODERATION: {
@@ -125,6 +182,39 @@ const MESSAGES = {
       }
     },
     TARTA: {
+      ADDLANTERN: {
+        name: "addlantern",
+        aliases: ["addlant", "addl"],
+        category: "tarta",
+        description: "Ajoute une lanterne à l'utilisateur",
+        isAdmin: false,
+        permissions: true,
+        cooldown: 0,
+        args: false,
+        usage: "<membre>"
+      },
+      LANTERNS: {
+        name: "lanterns",
+        aliases: ["lant", "lanternes"],
+        category: "tarta",
+        description: "Lanternes en cours des membres.",
+        isAdmin: false,
+        permissions: true,
+        cooldown: 0,
+        args: false,
+        usage: ""
+      },
+      REMOVELANTERN: {
+        name: "removelantern",
+        aliases: ["rmlant", "rl"],
+        category: "tarta",
+        description: "Retire une lanterne à l'utilisateur",
+        isAdmin: false,
+        permissions: true,
+        cooldown: 0,
+        args: false,
+        usage: "<membre>"
+      },
       TARTA: {
         name: "tarta",
         aliases: ["trt", "t"],
@@ -132,6 +222,7 @@ const MESSAGES = {
         description: "user et lvl Tarta",
         isAdmin: false,
         permissions: true,
+        cooldown: 0,
         args: true,
         usage: "<tonMsg>"
       }
@@ -141,13 +232,19 @@ const MESSAGES = {
 
 const CHANNELS = {
   TARTA: {
-    id: "727579420042461235"
+    id: "703645975721410660"
   },
   GVG: {
-    id: "713768108799557752"
+    id: "703645929483272283"
   },
   LOG: {
-    id: "727596239465611296"
+    id: "733684325870207126"
+  },
+  ANNC: {
+    id: "678241770278223883"
+  },
+  DESK: {
+    id: "697612522907369533"
   }
 };
 

@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const { MESSAGES, CHANNELS } = require("../../util/constants");
 
 module.exports.run = async (client, message, args) => {
-  const user = message.guild.member(message.mentions.users.first());
+  let user = message.guild.member(message.mentions.users.first());
 
   if (isNaN(args[1]) || (args[1] < 1 || args[1] > 100))
     return message.reply(`${message.author} uniquement un nombre entre 1 et 100 !`);
@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
   const embed = new MessageEmbed()
     .setAuthor(message.author.username, message.author.avatarURL())
     .setColor("#0C82FF")
-    .setDescription(`**Action:** Suppression messages membre.\n${args[1]} messages supprimés.\n**Channel:**${message.channel}`)
+    .setDescription(`**Action:** Suppression messages membre.\n${args[1]} messages supprimés.\n**Membre:**${args[0]}`)
     .setTimestamp();
 
   client.channels.cache.get(CHANNELS.LOG.id).send(embed);

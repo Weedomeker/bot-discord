@@ -4,11 +4,11 @@ const { readdirSync } = require("fs");
 const { MESSAGES } = require("../../util/constants");
 const categoryList = readdirSync("./commands");
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, settings) => {
   if (!args.length) {
     const embed = new MessageEmbed()
       .setColor("#36393F")
-      .addField("Liste des commandes", `Liste de toutes les commandes et sous commandes disponibles.\nPour plus d'info, tapes \`${client.config.PREFIX}help <command_name>\``);
+      .addField("Liste des commandes", `Liste de toutes les commandes et sous commandes disponibles.\nPour plus d'info, tapes \`${settings.prefix}help <command_name>\`.`);
 
     for (const category of categoryList) {
       embed.addField(
@@ -26,7 +26,7 @@ module.exports.run = (client, message, args) => {
     .setColor("#36393F")
     .setTitle(`\`${command.help.name}\``)
     .addField("Description", `${command.help.description} (cd: ${command.help.cooldown} secs.)`)
-    .addField("Utilisation", command.help.usage ? `${client.config.PREFIX}${command.help.name} ${command.help.usage}` : `${client.config.PREFIX}${command.help.name}`, true);
+    .addField("Utilisation", command.help.usage ? `${settings.prefix}${command.help.name} ${command.help.usage}` : `${settings.prefix}${command.help.name}`, true);
 
   if (command.help.aliases.length > 1) embed.addField("Alias", `${command.help.aliases.join(", ")}`, true);
   return message.channel.send(embed);

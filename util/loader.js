@@ -1,5 +1,6 @@
+const startTime = new Date().getTime();
+let elapsedTime = 0;
 const { readdirSync } = require("fs");
-
 const loadCommands = (client, dir = "./commands/") => {
   readdirSync(dir).forEach(dirs => {
     const commands = readdirSync(`${dir}/${dirs}/`).filter(files => files.endsWith(".js"));
@@ -23,6 +24,9 @@ const loadEvents = (client, dir = "./events/") => {
     }
   });
 };
+
+elapsedTime = new Date().getTime() - startTime;
+console.log(`Time exec loader: ${elapsedTime / 1000} secs.`);
 
 module.exports = {
   loadCommands,

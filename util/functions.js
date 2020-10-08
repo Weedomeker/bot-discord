@@ -1,7 +1,10 @@
 const mangoose = require("mongoose");
-const { Guild } = require("../models/index");
+const { Guild, User } = require("../models/index");
+const { Message } = require("discord.js");
 
 module.exports = client => {
+
+  // GUILD
   client.createGuild = async guild => {
     const merged = Object.assign({ _id: mangoose.Types.ObjectId() }, guild);
     const createGuild = await new Guild(merged);
@@ -22,4 +25,61 @@ module.exports = client => {
     }
     return data.updateOne(settings);
   };
+
+  // USER
+  client.createUser = async user => {
+    const merged = Object.assign({ _id: mangoose.Types.ObjectId() }, user);
+    const createUser = await new User(merged);
+    createUser.save().then(u => console.log(`Nouvel utilisateur -> ${u.username}`));
+  };
+
+  client.getUser = async user => {
+    const data = await User.findOne({ userID: user.id });
+    if (data) return data;
+    else return;
+  };
+
+  client.getUsers = async guild => {
+    const data = await User.find({ guildID: guild.id });
+    if (data) return data;
+    else return;
+  };
+
+  client.updateUser = async (user, settings) => {
+    let data = await client.getUser(user);
+    if (typeof data !== "object") data = {};
+    for (const key in settings) {
+      if (data[key] !== settings[key]) data[key] = settings[key];
+    }
+    return data.updateOne(settings);
+  };
+
+  // EXP
+  client.addExp = async (client, member, exp) => {
+   const userToUpdate = await client.getUser(member);
+   const updatedExp = userToUpdate.experience + exp;
+   await client.updateUser(member, { experience: updatedExp });
+  };
+
+  client.removeExp = async (client, member, exp) => {
+    const userToUpdate = await client.getUser(member);
+    const updatedExp = userToUpdate.experience - exp;
+    await client.updateUser(member, { experience: updatedExp });
+  };
+
+  //lanternes
+  client.removeLantern = async (client, member) => {
+    const userToUpdate = await client.getUser(member);
+    const updateLant = userToUpdate.lanternes = 0;
+    await client.updateUser(member, { lanternes: updateLant });
+  };
+
+  client.addLantern = async (client, member) => {
+    const userToUpdate = await client.getUser(member);
+    const updateLant = userToUpdate.lanternes = 5;
+    await client.updateUser(member, { lanternes: updateLant });
+  };
+
+ 
+
 };

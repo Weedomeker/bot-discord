@@ -1,3 +1,5 @@
+const startTime = new Date().getTime();
+let elapsedTime = 0;
 const { Client, Collection } = require("discord.js");
 const { loadCommands, loadEvents } = require("./util/loader");
 
@@ -14,5 +16,7 @@ loadEvents(client);
 console.log("══════════════════════════");
 client.mongoose.init();
 client.login(client.config.TOKEN);
+elapsedTime = new Date().getTime() - startTime;
+console.log(`Time exec: ${elapsedTime / 1000} secs.`);
 
 

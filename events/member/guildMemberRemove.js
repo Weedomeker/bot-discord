@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { CHANNELS } = require("../../util/constants");
 
 module.exports = (client, member) => {
   const embed = new MessageEmbed()
@@ -8,7 +9,7 @@ module.exports = (client, member) => {
     // .setThumbnail(client.user.displayAvatarURL())
     .setTimestamp();
 
-  client.channels.cache.get("727596239465611296").send(embed);
+  client.channels.cache.get(CHANNELS.LOG.id).send(embed);
 };
 
 

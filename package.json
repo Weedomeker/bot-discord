@@ -1,50 +1,22 @@
 {
   "name": "bot",
   "version": "0.1.0",
-  "description": "Discord Bot ",
+  "description": "Discord Bot Orphea Guild",
   "main": "main.js",
   "repository": "https://github.com/Weedomeker/bot-discord.git",
   "author": "Weedomeker <weedomeker@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "discord.js": "github:discordjs/discord.js",
-    "emoji-unicode": "^2.0.0",
+    "emoji-unicode": "^2.0.1",
     "forever-monitor": "^3.0.1",
-    "mongoose": "^5.9.24",
+    "git": "^0.1.5",
+    "modclean": "^3.0.0-beta.1",
+    "mongoose": "^5.10.8",
+    "node-cron": "^2.0.3",
     "node-http-ping": "^0.3.1",
     "pm2-discord": "^0.1.2",
-    "sqlite3": "^5.0.0",
-    "webhook-discord": "^3.7.4"
-  },
-  "devDependencies": {
-    "electron": "^9.1.0",
-    "eslint": "^7.4.0",
-    "eslint-config-aqua": "^7.2.4",
-    "mocha": "^8.0.1",
-    "node-cron": "^2.0.3",
-    "prettier": "^2.0.5",
-    "spectron": "^11.1.0"
-  },
-  "eslintConfig": {
-    "extends": "aqua/node",
-    "rules": {
-      "linebreak-style": [
-        "error",
-        "windows"
-      ],
-      "quotes": [
-        "warn",
-        "double"
-      ],
-      "indent": [
-        "error",
-        2
-      ],
-      "curly": "off"
-    }
-  },
-  "scripts": {
-    "test": "mocha"
+    "webhook-discord": "^3.7.7"
   },
   "optionalDependencies": {}
 }
