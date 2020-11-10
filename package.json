@@ -43,8 +43,5 @@
       "curly": "off"
     }
   },
-  "scripts": {
-    "test": "mocha"
-  },
   "optionalDependencies": {}
 }
