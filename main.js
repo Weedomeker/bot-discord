@@ -17,6 +17,6 @@ console.log("══════════════════════�
 client.mongoose.init();
 client.login(client.config.TOKEN);
 elapsedTime = new Date().getTime() - startTime;
-console.log(`Time exec: ${elapsedTime / 1000} secs.`);
+console.log(`Exécuté en: ${elapsedTime / 1000} secs.`);
 
 

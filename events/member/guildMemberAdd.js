@@ -11,6 +11,13 @@ module.exports = async (client, member) => {
 
   client.channels.cache.get(CHANNELS.LOG.id).send(embed);
 
+  await client.createUser({
+    guildID: member.guild.id,
+    guildName: member.guild.name,
+    userID: member.id,
+    username: member.user.tag,
+    lanternes: 5
+  });
 };
 
 

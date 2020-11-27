@@ -14,11 +14,12 @@ module.exports.run = (client, message, args) => {
   colorUsr === "o" ? color = "#ff6a00" : "";
 
   const embed = new MessageEmbed()
+    .setAuthor(message.author.username, message.author.avatarURL())
     .setColor(`${color}`)
-    .setThumbnail(client.user.displayAvatarURL())
-    .addField("__**Annonce:**__", `${txt}`)
-    .setTimestamp()
-    .setFooter(message.author.username, message.author.avatarURL());
+    // .setThumbnail(client.user.displayAvatarURL())
+    .addField("__**Annonce:**__", `${txt}\n`)
+    .setTimestamp();
+    // .setFooter(message.author.username, message.author.avatarURL());
 
   message.channel.send(embed);
 };

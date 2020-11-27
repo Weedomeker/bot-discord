@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const { MESSAGES, CHANNELS } = require("../../util/constants");
 
 module.exports.run = async (client, message, args) => {
-  let user = message.guild.member(message.mentions.users.first());
+  const user = message.guild.member(message.mentions.users.first());
 
   if (isNaN(args[1]) || (args[1] < 1 || args[1] > 100))
     return message.reply(`${message.author} uniquement un nombre entre 1 et 100 !`);

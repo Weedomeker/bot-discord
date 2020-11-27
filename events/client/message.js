@@ -1,22 +1,31 @@
 
 const { Collection } = require("discord.js");
 
+
 module.exports = async (client, message) => {
   const startTime = new Date().getTime();
   let elapsedTime = 0;
   const settings = await client.getGuild(message.guild);
-  const dbUser = await client.getUser(message.member);
 
   if (message.channel.type === "dm") return client.emit("directMessage", message);
   if (message.author.bot) return;
+
+  const dbUser = await client.getUser(message.member);
+  if (!dbUser) await client.createUser({
+    guildID: message.member.guild.id,
+    guildName: message.member.guild.name,
+    userID: message.member.id,
+    username: message.member.user.username,
+    lanternes: 5
+  });
 
   const expCd = Math.floor(Math.random() * 19) + 1;
   const expToAdd = Math.floor(Math.random() * 25) + 10;
 
   if (expCd >= 8 && expCd <= 11) {
-    //console.log(`Exp gagné: ${expToAdd}`);
+    // console.log(`Exp gagné: ${expToAdd}`);
     await client.addExp(client, message.member, expToAdd);
-  };
+  }
   if (!message.content.startsWith(settings.prefix)) return;
   const args = message.content.slice(settings.prefix.length).split(/ +/);
   const commandName = args.shift().toLowerCase();
@@ -35,7 +44,7 @@ module.exports = async (client, message) => {
 
   if (command.help.isAdmin && !user) return message.reply("Il faut mentionner un membre.");
 
-  if (command.help.isAdmin && message.guild.member(message.mentions.users.first()).hasPermission("BAN_MEMBERS")) return message.reply("Tu ne peux pas utiliser cette commande sur cette utilisateur !");
+  if (command.help.isAdmin && message.guild.member(message.mentions.users.first()).hasPermission("ADMINISTRATOR")) return message.reply("Tu ne peux pas utiliser cette commande sur cet utilisateur !");
 
 
   if (!client.cooldowns.has(command.help.name)) {
@@ -60,9 +69,7 @@ module.exports = async (client, message) => {
 
   command.run(client, message, args, settings, dbUser);
   message.delete();
-  console.log(`► Cmd: ${commandName}`);
-  //console.log(`--Args: ${args}`);
-  console.log(`--User: ${message.member.displayName}`);
   elapsedTime = new Date().getTime() - startTime;
-  console.log(`Time exec message: ${elapsedTime} ms.`);
+
+  console.log(`► Cmd: ${commandName} User: ${message.member.displayName} Exécuté en: ${elapsedTime} ms.`);
 };

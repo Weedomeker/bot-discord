@@ -41,7 +41,7 @@ const MESSAGES = {
       REMOVEEXPERIENCE: {
         name: "removeexperience",
         description: "Enlève de l'xp à l'utilisateur.",
-        aliases: ["rmxp","removeexperience"],
+        aliases: ["rmxp", "removeexperience"],
         category: "experience",
         isAdmin: false,
         permissions: true,
@@ -52,7 +52,7 @@ const MESSAGES = {
       ADDEXPERIENCE: {
         name: "addexperience",
         description: "Ajout xp à l'utilisateur.",
-        aliases: ["addxp","addexperience"],
+        aliases: ["addxp", "addexperience"],
         category: "experience",
         isAdmin: false,
         permissions: true,
@@ -63,7 +63,7 @@ const MESSAGES = {
       USEREXPERIENCE: {
         name: "userexperience",
         description: "Exp de l'utilisateur.",
-        aliases: ["usrxp","userexperience"],
+        aliases: ["usrxp", "userexperience"],
         category: "experience",
         isAdmin: false,
         permissions: false,
@@ -93,10 +93,51 @@ const MESSAGES = {
         cooldown: 3,
         args: false
       },
+      BOTSTATS: {
+        name: "botstats",
+        description: "Info sur le bot.",
+        aliases: ["botstat", "botstats", "statsbot", "stbot"],
+        category: "misc",
+        isAdmin: false,
+        permissions: false,
+        cooldown: 3,
+        args: false
+      },
+      USERINFO: {
+        name: "userinfo",
+        description: "Info sur toi même ou un membre de la guilde.",
+        aliases: "user",
+        category: "misc",
+        isAdmin: false,
+        permissions: false,
+        cooldown: 3,
+        usage: "<command_name> <member>",
+        args: false
+      },
+      SERVERINFO: {
+        name: "serverinfo",
+        description: "Info sur le discord.",
+        aliases: "server",
+        category: "misc",
+        isAdmin: false,
+        permissions: false,
+        cooldown: 3,
+        args: false
+      },
       DICE: {
         name: "dice",
         description: "Lancé de dés !",
         aliases: "d",
+        category: "misc",
+        isAdmin: false,
+        permissions: false,
+        cooldown: 3,
+        args: false
+      },
+      KESKIDI: {
+        name: "keskidi",
+        description: "",
+        aliases: "k",
         category: "misc",
         isAdmin: false,
         permissions: false,
@@ -159,6 +200,17 @@ const MESSAGES = {
         args: true,
         usage: "<color r,g,b,y,o> <texte>"
       },
+      MUTE: {
+        name: "mute",
+        aliases: ["mute", "mu", "m"],
+        category: "moderation",
+        description: "Mute l'utilisateur mentionné.",
+        permissions: true,
+        isAdmin: true,
+        cooldown: 3,
+        args: true,
+        usage: "<@user> <time>"
+      },
       RELOAD: {
         name: "reload",
         description: "Reboot le bot.",
@@ -179,6 +231,17 @@ const MESSAGES = {
         cooldown: 3,
         args: true,
         usage: "<user> <nbr (1-100)>"
+      },
+      UNMUTE: {
+        name: "unmute",
+        aliases: ["unmute", "nomute", "stopmute", "um"],
+        category: "moderation",
+        description: "Unmute l'utilisateur mentionné.",
+        permissions: true,
+        isAdmin: true,
+        cooldown: 3,
+        args: true,
+        usage: "<@user>"
       }
     },
     TARTA: {
@@ -217,9 +280,31 @@ const MESSAGES = {
       },
       TARTA: {
         name: "tarta",
-        aliases: ["trt", "t"],
+        aliases: ["t"],
         category: "tarta",
         description: "user et lvl Tarta",
+        isAdmin: false,
+        permissions: true,
+        cooldown: 0,
+        args: true,
+        usage: "<tonMsg>"
+      },
+      TARTA1: {
+        name: "tarta1",
+        aliases: ["t1"],
+        category: "tarta",
+        description: "Désigne la cible 1 dans Tarta",
+        isAdmin: false,
+        permissions: true,
+        cooldown: 0,
+        args: true,
+        usage: "<tonMsg>"
+      },
+      TARTA2: {
+        name: "tarta2",
+        aliases: ["t2"],
+        category: "tarta",
+        description: "Désigne la cible 2 dans Tarta",
         isAdmin: false,
         permissions: true,
         cooldown: 0,

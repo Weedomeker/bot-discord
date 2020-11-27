@@ -1,14 +1,16 @@
+/* eslint-disable object-curly-spacing */
+/* eslint-disable quote-props */
 const mangoose = require("mongoose");
 const { Guild, User } = require("../models/index");
-const { Message } = require("discord.js");
 
 module.exports = client => {
-
   // GUILD
   client.createGuild = async guild => {
     const merged = Object.assign({ _id: mangoose.Types.ObjectId() }, guild);
     const createGuild = await new Guild(merged);
-    createGuild.save().then(g => console.log(`Nouveau serveur -> ${g.guildName}`));
+    createGuild
+      .save()
+      .then(g => console.log(`Nouveau serveur -> ${g.guildName}`));
   };
 
   client.getGuild = async guild => {
@@ -30,19 +32,19 @@ module.exports = client => {
   client.createUser = async user => {
     const merged = Object.assign({ _id: mangoose.Types.ObjectId() }, user);
     const createUser = await new User(merged);
-    createUser.save().then(u => console.log(`Nouvel utilisateur -> ${u.username}`));
+    createUser
+      .save()
+      .then(u => console.log(`Nouvel utilisateur -> ${u.username}`));
   };
 
   client.getUser = async user => {
     const data = await User.findOne({ userID: user.id });
     if (data) return data;
-    else return;
   };
 
   client.getUsers = async guild => {
     const data = await User.find({ guildID: guild.id });
     if (data) return data;
-    else return;
   };
 
   client.updateUser = async (user, settings) => {
@@ -56,9 +58,9 @@ module.exports = client => {
 
   // EXP
   client.addExp = async (client, member, exp) => {
-   const userToUpdate = await client.getUser(member);
-   const updatedExp = userToUpdate.experience + exp;
-   await client.updateUser(member, { experience: updatedExp });
+    const userToUpdate = await client.getUser(member);
+    const updatedExp = userToUpdate.experience + exp;
+    await client.updateUser(member, { experience: updatedExp });
   };
 
   client.removeExp = async (client, member, exp) => {
@@ -66,20 +68,4 @@ module.exports = client => {
     const updatedExp = userToUpdate.experience - exp;
     await client.updateUser(member, { experience: updatedExp });
   };
-
-  //lanternes
-  client.removeLantern = async (client, member) => {
-    const userToUpdate = await client.getUser(member);
-    const updateLant = userToUpdate.lanternes = 0;
-    await client.updateUser(member, { lanternes: updateLant });
-  };
-
-  client.addLantern = async (client, member) => {
-    const userToUpdate = await client.getUser(member);
-    const updateLant = userToUpdate.lanternes = 5;
-    await client.updateUser(member, { lanternes: updateLant });
-  };
-
- 
-
 };

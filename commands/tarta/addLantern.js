@@ -1,10 +1,13 @@
+/* eslint-disable quote-props */
+/* eslint-disable object-curly-spacing */
 const { MESSAGES } = require("../../util/constants");
-module.exports.run = (client, message, args) => {
+const { User } = require("../../models/index");
 
-  const user = message.guild.member(message.mentions.users.first());
-  client.addLantern(client, user);
-  message.channel.send(`1 lanterne de plus pour ${user}.`);
-
+module.exports.run = async () => {
+  // $lte = less $qte = greater
+  await User.updateMany(
+    {"lanternes": {"$lte": 6}}, {"$set": {"lanternes": 5}}, { "multi": true }
+  );
 };
 
 module.exports.help = MESSAGES.COMMANDS.TARTA.ADDLANTERN;

@@ -1,25 +1,23 @@
-const { MessageEmbed } = require("discord.js");
+/* eslint-disable no-octal */
 const { CHANNELS } = require("../../util/constants");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = async client => {
   console.log(`Le bot ${client.user.tag} est connecté !`);
   client.user.setPresence({
     activity: {
-      name: "Avec mon chat",
-      type: "PLAYING"
+      name: "ZiziCoptère",
+      type: "WATCHING"
     },
-    status: "dnd"
+    status: "online"
   });
-
 
   const embed = new MessageEmbed()
     .setTitle("Etat du bot:")
     .setColor("#00e51b")
     .setThumbnail(client.user.displayAvatarURL())
-    .addField("Bot opérationnel !", "Youhouuu 😺\n\n **Penses à relancer les annonces auto si besoin...**")
+    .addField("Bot opérationnel !", "Youhouuu 😺\n\nPenses à relancer les annonces auto !!!")
   // .setImage(client.user.displayAvatarURL())
     .setTimestamp();
   await client.channels.cache.get(CHANNELS.LOG.id).send(embed);
 };
-
-

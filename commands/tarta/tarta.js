@@ -9,7 +9,7 @@ module.exports.run = (client, message, args) => {
   const txtMsg = txt.join(" ");
 
   const embed = new MessageEmbed()
-    .setColor("#0C82FF")
+    .setColor("#49fc03")
     .addField(
       "Pour info:",
       `

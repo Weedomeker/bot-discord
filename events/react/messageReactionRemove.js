@@ -26,5 +26,5 @@ module.exports = async (client, messageReaction, user) => {
       break;
     }
   }
-  if (emoji === "✅") await message.edit(`${message.content}`);
+  if (emoji === "✅" && message.channel.id === channel.id) await message.edit(`${message.content}`);
 };

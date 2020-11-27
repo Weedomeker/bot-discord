@@ -1,37 +1,24 @@
+/* eslint-disable quotes */
 /* eslint-disable no-octal */
 /* eslint-disable no-mixed-operators */
-
-// const cron = require("node-cron");
 const { MESSAGES, CHANNELS } = require("../../util/constants");
 const { MessageEmbed, MessageAttachment } = require("discord.js");
 const trollImg = new MessageAttachment("./assets/img/troll.png");
 const defImg = new MessageAttachment("./assets/img/def.png");
 const gvgImg = new MessageAttachment("./assets/img/gvg.png");
 const gvoImg = new MessageAttachment("./assets/img/gvo.png");
+const fs = require("fs");
 
 module.exports.run = (client, message) => {
   setInterval(() => {
     const d = new Date();
     const weekDay = d.getDay();
-    const hours = d.getHours();
-    const minutes = d.getMinutes();
+    const hrs = d.getHours();
+    const mins = d.getMinutes();
     const secs = d.getSeconds();
 
     // RAPPEL GVG ALLDAYS
-    if (
-      (weekDay >= 1 &&
-        weekDay < 6 &&
-        hours === 09 &&
-        minutes === 00 &&
-        secs === 00) ||
-      (weekDay >= 1 &&
-        weekDay < 6 &&
-        hours === 21 &&
-        minutes === 00 &&
-        secs === 00) ||
-      (weekDay === 6 && hours === 09 && minutes === 00 && secs === 00) ||
-      (weekDay === 6 && hours === 17 && minutes === 00 && secs === 00)
-    ) {
+    if ((weekDay >= 1 && weekDay < 6 && hrs === 09 && mins === 00 && secs === 00) || (weekDay >= 1 && weekDay < 6 && hrs === 21 && mins === 00 && secs === 00) || (weekDay === 6 && hrs === 09 && mins === 00 && secs === 00) || (weekDay === 6 && hrs === 17 && mins === 00 && secs === 00)) {
       const embed = new MessageEmbed()
 
         .setColor("#FF0000")
@@ -48,7 +35,7 @@ module.exports.run = (client, message) => {
     }
 
     // DEF JEUDI
-    if (weekDay === 4 && hours === 21 && minutes === 00 && secs === 00) {
+    if (weekDay === 4 && hrs === 21 && mins === 00 && secs === 00) {
       client.channels.cache.get(CHANNELS.ANNC.id).send("@everyone");
       const embed = new MessageEmbed()
         .setTitle("Grosses def GvG!")
@@ -65,7 +52,7 @@ module.exports.run = (client, message) => {
     }
 
     // DEF DIMANCHE
-    if (weekDay === 0 && hours === 15 && minutes === 00 && secs === 00) {
+    if (weekDay === 0 && hrs === 15 && mins === 00 && secs === 00) {
       client.channels.cache.get(CHANNELS.ANNC.id).send("@everyone");
       const embed = new MessageEmbed()
         .setTitle("Inscriptions GvG à 21h00!")
@@ -89,9 +76,7 @@ module.exports.run = (client, message) => {
     }
 
     // GVO Inscription
-    if (weekDay === 0 && hours === 15 && minutes === 00 && secs === 00) {
-      client.channels.cache.get(CHANNELS.ANNC.id).send("@everyone");
-
+    if (weekDay === 0 && hrs === 15 && mins === 00 && secs === 00) {
       const embed = new MessageEmbed()
         .setTitle("Inscriptions Gvo!")
         .setColor("#FF4E0C ")
@@ -108,20 +93,45 @@ module.exports.run = (client, message) => {
         .setTimestamp()
         .setFooter(message.author.username, message.author.avatarURL());
 
-      client.channels.cache
-        .get(CHANNELS.ANNC.id)
-        .send(embed)
-        .then(msg => {
+      client.channels.cache.get(CHANNELS.ANNC.id).send(embed).then(msg => {
+        msg.react("☝️");
+      });
+    }
+
+    // ABSENTS TARTA
+    if (weekDay === 3 && hrs === 12 && mins === 00 && secs === 00) {
+      const readData = fs.readFileSync("config.json");
+      const trueData = { start: true };
+      const falseData = { start: false };
+      const parseData = JSON.parse(readData);
+      console.log(`Read json: ${parseData.start}`);
+      if (parseData.start === true) {
+        const embed = new MessageEmbed()
+          .setTitle("⚠ Absence(s) Tarta ⚠")
+          .setColor("#FF2000 ")
+          .addField(
+            "Important",
+            `Si vous êtes **totalement** absent Samedi, merci de réagir à l'émote ci-dessous.\nLes absents qui n'ont pas prévenu.. Vous connaissez la suite. 🙂`
+          )
+          .setTimestamp()
+          .setFooter(message.author.username, message.author.avatarURL());
+        message.channels.cache.get(CHANNELS.ANNC.id).send("@everyone");
+        client.channels.cache.get(CHANNELS.ANNC.id).send(embed).then(msg => {
           msg.react("☝️");
         });
+        const falsedataJson = JSON.stringify(falseData);
+        fs.writeFileSync("config.json", falsedataJson);
+      } else {
+        const truedataJson = JSON.stringify(trueData);
+        fs.writeFileSync("config.json", truedataJson);
+        console.log(`Update json: ${truedataJson}`);
+      }
     }
   }, 1000);
 
-  client.channels.cache
-    .get(CHANNELS.LOG.id)
-    .send(
-      "Annonces GVG et GVO lancées.\n`Jeudi: 21h grosse def.\nDimanche: 15h troll def. ET Inscription GVO !!!`"
-    );
+  client.channels.cache.get(CHANNELS.LOG.id).send(
+    "Annonces GVG et GVO lancées.\n\`Mercredi: 12h Abs Tarta\nJeudi: 21h grosse def.\nDimanche: 15h troll def. ET Inscription GVO !!!\`"
+  );
 };
 
 module.exports.help = MESSAGES.COMMANDS.GVG.GVGAUTO;
