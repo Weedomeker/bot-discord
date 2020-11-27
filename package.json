@@ -7,12 +7,12 @@
   "author": "Weedomeker <weedomeker@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^12.4.1",
+    "discord.js": "^12.5.1",
     "emoji-unicode": "^2.0.1",
-    "forever-monitor": "^3.0.1",
+    "forever-monitor": "^3.0.3",
     "fs": "0.0.1-security",
     "moment": "^2.29.1",
-    "mongoose": "^5.10.13",
+    "mongoose": "^5.10.16",
     "ms": "^2.1.2",
     "pm2-discord": "^0.1.2",
     "systeminformation": "^4.30.6",
@@ -20,11 +20,11 @@
   },
   "devDependencies": {
     "electron": "^10.1.6",
-    "eslint": "^7.4.0",
+    "eslint": "^7.14.0",
     "eslint-config-aqua": "^7.2.4",
     "mocha": "^8.2.1",
     "node-cron": "^2.0.3",
-    "prettier": "^2.0.5",
+    "prettier": "^2.2.0",
     "spectron": "^12.0.0"
   },
   "eslintConfig": {
