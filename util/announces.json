@@ -1,0 +1,28 @@
+{
+
+"Announces":{
+
+  "troll_def": {
+    "title": "** **",
+    "text": ""
+  },
+  "def":{
+    "title": "** **",
+    "text": ""
+  },
+  "gvo": {
+    "title": "** **",
+    "text": ""
+  },
+  "gvg_reminder": {
+    "title": "**ZEUB**",
+    "text": "Test texte + Titre"
+  },
+  "abs_tarta": {
+    "title": "** **",
+    "text": ""
+  }
+
+  }
+
+}

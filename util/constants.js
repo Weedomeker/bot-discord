@@ -197,8 +197,8 @@ const MESSAGES = {
         description: "Envoie un embed !",
         isAdmin: false,
         permissions: true,
-        args: true,
-        usage: "<color r,g,b,y,o> <texte>"
+        args: false,
+        usage: "test"
       },
       MUTE: {
         name: "mute",

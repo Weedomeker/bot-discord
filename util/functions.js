@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-spacing */
 /* eslint-disable quote-props */
 const mangoose = require("mongoose");
-const { Guild, User } = require("../models/index");
+const { Guild, User, Txt } = require("../models/index");
 
 module.exports = client => {
   // GUILD

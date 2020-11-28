@@ -1,25 +1,20 @@
 // @ts-check
 const { MessageEmbed } = require("discord.js");
 const { MESSAGES } = require("../../util/constants");
+const fs = require("fs");
 
-module.exports.run = (client, message, args) => {
-  const colorUsr = args[0];
-  let color;
-  const txt = args.splice(1).join(" ");
-
-  colorUsr === "r" ? color = "#FF0000" : "";
-  colorUsr === "g" ? color = "#00e51b" : "";
-  colorUsr === "b" ? color = "#00d2ff" : "";
-  colorUsr === "y" ? color = "#ffe600" : "";
-  colorUsr === "o" ? color = "#ff6a00" : "";
+module.exports.run = (client, message) => {
+  const rawdata = fs.readFileSync("./util/announces.json", "utf8");
+  const data = JSON.parse(rawdata);
+  console.log(data);
 
   const embed = new MessageEmbed()
-    .setAuthor(message.author.username, message.author.avatarURL())
-    .setColor(`${color}`)
+    // .setAuthor(message.author.username, message.author.avatarURL())
+    .setColor("#00d2ff")
     // .setThumbnail(client.user.displayAvatarURL())
-    .addField("__**Annonce:**__", `${txt}\n`)
-    .setTimestamp();
-    // .setFooter(message.author.username, message.author.avatarURL());
+    .addField(`${data.Announces.gvg_reminder.title}`, `${data.Announces.gvg_reminder.text}\n`)
+    .setTimestamp()
+    .setFooter(message.author.username, message.author.avatarURL());
 
   message.channel.send(embed);
 };
