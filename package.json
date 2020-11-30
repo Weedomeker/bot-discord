@@ -1,6 +1,6 @@
 {
   "name": "bot",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Discord Bot for Orphea Guild",
   "main": "main.js",
   "repository": "https://github.com/Weedomeker/bot-discord.git",
@@ -15,11 +15,11 @@
     "fs": "0.0.1-security",
     "fs-extra": "^9.0.1",
     "moment": "^2.29.1",
-    "mongoose": "^5.10.16",
+    "mongoose": "^5.10.18",
     "ms": "^2.1.2",
     "path": "^0.12.7",
     "pm2-discord": "^0.1.2",
-    "systeminformation": "^4.30.6",
+    "systeminformation": "^4.30.7",
     "webhook-discord": "^3.7.7"
   },
   "devDependencies": {
@@ -27,7 +27,7 @@
     "eslint-config-aqua": "^7.2.4",
     "mocha": "^8.2.1",
     "node-cron": "^2.0.3",
-    "prettier": "^2.2.0"
+    "prettier": "^2.2.1"
   },
   "eslintConfig": {
     "extends": "aqua/node",
