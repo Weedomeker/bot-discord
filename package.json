@@ -15,11 +15,11 @@
     "fs": "0.0.1-security",
     "fs-extra": "^9.0.1",
     "moment": "^2.29.1",
-    "mongoose": "^5.10.18",
+    "mongoose": "^5.11.0",
     "ms": "^2.1.2",
     "path": "^0.12.7",
     "pm2-discord": "^0.1.2",
-    "systeminformation": "^4.30.7",
+    "systeminformation": "^4.30.9",
     "webhook-discord": "^3.7.7"
   },
   "devDependencies": {

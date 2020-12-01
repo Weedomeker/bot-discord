@@ -2,26 +2,28 @@
 
 "Announces":{
 
-  "troll_def": {
-    "title": "** **",
-    "text": ""
-  },
-  "def":{
-    "title": "** **",
-    "text": ""
-  },
-  "gvo": {
-    "title": "** **",
-    "text": ""
-  },
-  "gvg_reminder": {
-    "title": "**Neph**",
-    "text": "bla bla bla"
-  },
-  "abs_tarta": {
-    "title": "** **",
-    "text": ""
-  }
+  "_comment": "Dimanche=0 Lundi=1 Mardi=2 Mercredi=3 Jeudi=4 Vendredi=5 Samedi=6",
+
+      "troll_def": {
+        "title": "** **",
+        "text": ""
+      },
+      "def":{
+        "title": "** **",
+        "text": ""
+      },
+      "gvo": {
+        "title": "**LOL**",
+        "text": "zeub"
+      },
+      "gvg_reminder": {
+        "title": "**Neph**",
+        "text": "nique ta maman"
+      },
+      "abs_tarta": {
+        "title": "** **",
+        "text": ""
+      }
 
   }
 
