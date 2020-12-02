@@ -11,7 +11,10 @@
     <script>
     $.getJSON('announces.json', function(data) {
         
-        var db = `test: ${data.Announces.gvo.text}<br>
+        var db = `
+TITRE: ${data.Announces.gvo.title}<br>
+TEXTE: ${data.Announces.gvo.text}<br>
+
         `
                     
         
