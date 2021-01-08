@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Orphea - Annonces Discord</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="members" style="text-align: center;"> </div>
+    <script type = "text/javascript" language="javascript">
+    $.getJSON('./SW_Exporter/OPH][Weedo-11182208.json', function(data) {
+
+        var div = document.getElementById("members");
+        var db = data;
+        var guild = db.guild;
+        var guildInfo = db.guild.guild_info;
+        var guildMembers = db.guild.guild_members;
+
+        var keys = Object.keys(guildMembers);
+            for(var k in keys) {
+                var keyName = keys[k];
+                var value = guildMembers[keyName];
+                var array = [];
+                array.push(value.wizard_name + "<br>Score Arene: " + value.arena_score + "<br>")
+                //console.log(value);
+            for (var i = 0; i < array.length; i++) {
+              var res = array[i];
+              document.write (`${res}`);
+           }
+            } 
+        } 
+        );
+    </script>  
+   
+</body>
+
+</html>

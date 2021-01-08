@@ -52,10 +52,10 @@ module.exports.run = (client, message) => {
     }
 
     // DEF DIMANCHE
-    if (weekDay === 0 && hrs === 15 && mins === 00 && secs === 00) {
+    if (weekDay === 0 && hrs === 12 && mins === 00 && secs === 00) {
       client.channels.cache.get(CHANNELS.ANNC.id).send("@everyone");
       const embed = new MessageEmbed()
-        .setTitle("Inscriptions GvG à 21h00!")
+        .setTitle("Inscriptions GvG à 19h30!")
         .setColor("#FF0000")
         .attachFiles(trollImg)
         .setThumbnail("attachment://troll.png")
@@ -76,9 +76,9 @@ module.exports.run = (client, message) => {
     }
 
     // GVO Inscription
-    if (weekDay === 0 && hrs === 15 && mins === 00 && secs === 00) {
+    if (weekDay === 0 && hrs === 12 && mins === 00 && secs === 00) {
       const embed = new MessageEmbed()
-        .setTitle("Inscriptions Gvo!")
+        .setTitle("Inscriptions Gvo 19h30!")
         .setColor("#FF4E0C ")
         .attachFiles(gvoImg)
         .setThumbnail("attachment://gvo.png")
@@ -115,8 +115,8 @@ module.exports.run = (client, message) => {
           )
           .setTimestamp()
           .setFooter(message.author.username, message.author.avatarURL());
-        message.channels.cache.get(CHANNELS.ANNC.id).send("@everyone");
-        client.channels.cache.get(CHANNELS.ANNC.id).send(embed).then(msg => {
+        client.channels.cache.get(CHANNELS.ABS.id).send("@everyone");
+        client.channels.cache.get(CHANNELS.ABS.id).send(embed).then(msg => {
           msg.react("☝️");
         });
         const falsedataJson = JSON.stringify(falseData);
@@ -130,8 +130,8 @@ module.exports.run = (client, message) => {
   }, 1000);
 
   client.channels.cache.get(CHANNELS.LOG.id).send(
-    "Annonces GVG et GVO lancées.\n\`Mercredi: 12h Abs Tarta\nJeudi: 21h grosse def.\nDimanche: 15h troll def. ET Inscription GVO !!!\`"
+    "Annonces GVG et GVO lancées.\n\`Mercredi: 12h Abs Tarta\nJeudi: 21h grosse def.\nDimanche: 12h troll def. ET Inscription GVO !!!\`"
   );
 };
 
-module.exports.help = MESSAGES.COMMANDS.GVG.GVGAUTO;
+module.exports.help = MESSAGES.COMMANDS.MODERATION.ANNONCES;

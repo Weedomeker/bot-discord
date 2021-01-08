@@ -73,6 +73,24 @@ const MESSAGES = {
       }
     },
     MISC: {
+      ARENA: {
+        name: "arena",
+        aliases: ["arena", "arene"],
+        category: "misc",
+        description: "Scores Arene IG",
+        isAdmin: false,
+        permissions: false,
+        args: false
+      },
+      GUILDE: {
+        name: "guilde",
+        aliases: ["guilde", "gld", "g"],
+        category: "misc",
+        description: "Membres de la guilde (ig).",
+        isAdmin: false,
+        permissions: false,
+        args: false
+      },
       SLIP: {
         name: "slip",
         description: "ça dérape !",
@@ -114,6 +132,17 @@ const MESSAGES = {
         usage: "<command_name> <member>",
         args: false
       },
+      SONDAGE: {
+        name: "sondage",
+        description: "Crée un sondage",
+        aliases: ["sdg", "poll", "sond"],
+        category: "misc",
+        isAdmin: false,
+        permissions: false,
+        cooldown: 1,
+        usage: "<sondage>",
+        args: true
+      },
       SERVERINFO: {
         name: "serverinfo",
         description: "Info sur le discord.",
@@ -137,7 +166,7 @@ const MESSAGES = {
       KESKIDI: {
         name: "keskidi",
         description: "",
-        aliases: "k",
+        aliases: ["k", "mekeskidi"],
         category: "misc",
         isAdmin: false,
         permissions: false,
@@ -147,7 +176,7 @@ const MESSAGES = {
       HELP: {
         name: "help",
         description: "Liste des commandes disponibles.",
-        aliases: ["h"],
+        aliases: ["h", "?"],
         category: "misc",
         isAdmin: false,
         permissions: false,
@@ -157,7 +186,7 @@ const MESSAGES = {
       },
       MEMBERS: {
         name: "members",
-        aliases: [""],
+        aliases: ["members", "mbr", "mbrs"],
         category: "misc",
         description: "Affiche la liste des membres de la guilde",
         permissions: false,
@@ -167,18 +196,17 @@ const MESSAGES = {
         usage: ""
       }
     },
-    GVG: {
-      GVGAUTO: {
-        name: "gvgauto",
-        aliases: "gvg",
-        category: "gvg",
-        description: "Annonce automatique des défenses gvg (grosses defs / trolls defs)",
+    MODERATION: {
+      ANNONCES: {
+        name: "annonces",
+        aliases: ["annonces", "ann", "an", "anc", "announces"],
+        category: "moderation",
+        description:
+          "Annonce automatique des défenses gvg (grosses defs / trolls defs)",
         isAdmin: false,
         permissions: true,
         args: false
-      }
-    },
-    MODERATION: {
+      },
       CLEAR: {
         name: "clear",
         aliases: ["clear", "cls", "del"],
@@ -310,6 +338,28 @@ const MESSAGES = {
         cooldown: 0,
         args: true,
         usage: "<tonMsg>"
+      },
+      TARTA3: {
+        name: "tarta3",
+        aliases: ["t3"],
+        category: "tarta",
+        description: "Désigne la cible 3 dans Tarta",
+        isAdmin: false,
+        permissions: true,
+        cooldown: 0,
+        args: true,
+        usage: "<tonMsg>"
+      },
+      TARTA_CLEAN: {
+        name: "tarta_clean",
+        aliases: ["tc", "tclean"],
+        category: "tarta",
+        description: "Rush minuit Tarta",
+        isAdmin: false,
+        permissions: true,
+        cooldown: 0,
+        args: false,
+        usage: ""
       }
     }
   }
@@ -330,6 +380,9 @@ const CHANNELS = {
   },
   DESK: {
     id: "697612522907369533"
+  },
+  ABS: {
+    id: "675872225970356256"
   }
 };
 
